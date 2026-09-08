@@ -1,3 +1,13 @@
+Absolutely. Here is the full updated code with:
+
+Age starting at **50**
+No age warning caption
+A more user friendly explanation of alcohol units
+The model prediction plus the estimated probability
+The H Tech navy and white styling
+Navy dropdown controls with white text
+
+```python
 # The 5-Week Machine Learning Engineer Challenge - Week 5 - Classification Deployment
 
 # Importing the libraries
@@ -188,7 +198,7 @@ st.markdown(
         color: #002060 !important;
     }
 
-    /* Metric */
+    /* Probability metric */
     [data-testid="stMetric"] {
         background-color: #F5F8FC !important;
         border: 1px solid #D5DFEC !important;
@@ -344,7 +354,7 @@ with st.container(border=True):
 
     with col2:
         alcohol_consumption = st.slider(
-            "Weekly Alcohol Consumption (alcohol units per week)",
+            "Approximate Weekly Alcohol Consumption (units)",
             min_value=0.0,
             max_value=20.0,
             value=5.0,
@@ -352,8 +362,10 @@ with st.container(border=True):
         )
 
         st.caption(
-            "Enter the approximate total number of alcohol units you consume "
-            "during a typical week."
+            "Estimate how much alcohol you drink in a typical week. "
+            "As a simple guide, a small glass of wine is about 1.5 units, "
+            "a regular beer about 1.5 to 2 units, and a single shot of spirits "
+            "about 1 unit. Enter 0 if you do not drink alcohol."
         )
 
         diet_quality = st.slider(
@@ -521,3 +533,4 @@ st.caption(
     "The probability displayed is the output of the Machine Learning model "
     "and should not be interpreted as a clinical probability or diagnosis."
 )
+```
