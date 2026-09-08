@@ -222,7 +222,7 @@ st.title("🧠 Alzheimer's Disease Predictor")
 
 # Adding the authoring
 st.markdown(
-    "### An AI-powered Machine Learning application by **H-Tech Education**"
+    "### An AI-powered application by **H-Tech Education**"
 )
 
 # Adding a short description of the app
