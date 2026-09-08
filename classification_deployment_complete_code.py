@@ -15,43 +15,148 @@ st.set_page_config(
 st.markdown(
     """
     <style>
+
+    /* Main application background */
     .stApp {
-        background-color: #FFFFFF;
+        background-color: #FFFFFF !important;
+        color: #002060 !important;
     }
 
+    /* Main content area */
     .block-container {
         max-width: 1100px;
         padding-top: 2rem;
         padding-bottom: 3rem;
     }
 
-    h1, h2, h3 {
-        color: #002060;
+    /* Headings */
+    h1, h2, h3, h4, h5, h6 {
+        color: #002060 !important;
     }
 
+    /* Standard text */
+    .stApp p {
+        color: #002060 !important;
+    }
+
+    /* Markdown text */
+    [data-testid="stMarkdownContainer"] {
+        color: #002060 !important;
+    }
+
+    [data-testid="stMarkdownContainer"] p {
+        color: #002060 !important;
+    }
+
+    /* Widget labels */
+    [data-testid="stWidgetLabel"] {
+        color: #002060 !important;
+    }
+
+    [data-testid="stWidgetLabel"] p {
+        color: #002060 !important;
+        font-weight: 500;
+    }
+
+    /* Captions */
+    [data-testid="stCaptionContainer"] {
+        color: #4D5F7A !important;
+    }
+
+    [data-testid="stCaptionContainer"] p {
+        color: #4D5F7A !important;
+    }
+
+    /* Select boxes */
+    div[data-baseweb="select"] > div {
+        background-color: #FFFFFF !important;
+        color: #002060 !important;
+        border-color: #B8C5D9 !important;
+    }
+
+    div[data-baseweb="select"] span {
+        color: #002060 !important;
+    }
+
+    /* Dropdown menus */
+    div[data-baseweb="popover"] {
+        background-color: #FFFFFF !important;
+    }
+
+    div[data-baseweb="menu"] {
+        background-color: #FFFFFF !important;
+    }
+
+    div[data-baseweb="menu"] li {
+        color: #002060 !important;
+    }
+
+    /* Slider value text */
+    [data-testid="stSlider"] {
+        color: #002060 !important;
+    }
+
+    [data-testid="stSlider"] p {
+        color: #002060 !important;
+    }
+
+    /* Slider track */
+    [data-baseweb="slider"] > div > div {
+        color: #002060 !important;
+    }
+
+    /* Containers */
+    [data-testid="stVerticalBlockBorderWrapper"] {
+        background-color: #FFFFFF !important;
+        border-color: #D5DFEC !important;
+        border-radius: 12px;
+    }
+
+    /* Divider */
+    hr {
+        border-color: #D5DFEC !important;
+    }
+
+    /* Prediction button */
     div.stButton > button {
-        background-color: #002060;
-        color: white;
-        border: none;
-        border-radius: 10px;
-        padding: 0.7rem 1.5rem;
-        font-size: 1.05rem;
-        font-weight: 600;
+        background-color: #002060 !important;
+        color: #FFFFFF !important;
+        border: none !important;
+        border-radius: 10px !important;
+        padding: 0.7rem 1.5rem !important;
+        font-size: 1.05rem !important;
+        font-weight: 600 !important;
+    }
+
+    div.stButton > button p {
+        color: #FFFFFF !important;
     }
 
     div.stButton > button:hover {
-        background-color: #001746;
-        color: white;
-        border: none;
+        background-color: #001746 !important;
+        color: #FFFFFF !important;
+        border: none !important;
     }
 
-    [data-testid="stCaptionContainer"] {
-        color: #5F6B7A;
+    div.stButton > button:hover p {
+        color: #FFFFFF !important;
     }
 
-    hr {
-        border-color: #DCE3EE;
+    /* Top Streamlit header */
+    [data-testid="stHeader"] {
+        background-color: #FFFFFF !important;
     }
+
+    /* Toolbar */
+    [data-testid="stToolbar"] {
+        color: #002060 !important;
+    }
+
+    /* Main menu icon */
+    [data-testid="stMainMenu"] {
+        color: #002060 !important;
+    }
+
     </style>
     """,
     unsafe_allow_html=True
@@ -329,11 +434,11 @@ if predict_button:
 
     if prediction == 1:
         st.warning(
-            "The model predicts that the patient is likely to have Alzheimer's Disease."
+            "The model predicts that you are likely to have Alzheimer's Disease."
         )
     else:
         st.success(
-            "The model predicts that the patient is unlikely to have Alzheimer's Disease."
+            "The model predicts that you are unlikely to have Alzheimer's Disease."
         )
 
 # Adding the medical disclaimer
