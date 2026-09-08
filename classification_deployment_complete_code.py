@@ -259,7 +259,7 @@ with st.container(border=True):
     with col1:
         age = st.slider(
             "Age",
-            min_value=50,
+            min_value=60,
             max_value=90,
             value=75
         )
