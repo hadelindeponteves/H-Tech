@@ -67,55 +67,68 @@ st.markdown(
         color: #4D5F7A !important;
     }
 
-    /* Closed dropdown controls */
-    div[data-baseweb="select"] > div {
+    /* Closed selectbox controls */
+    [data-testid="stSelectbox"] [role="group"] {
         background-color: #002060 !important;
-        color: #FFFFFF !important;
         border-color: #002060 !important;
         border-radius: 8px !important;
     }
 
-    div[data-baseweb="select"] span {
+    /* Selected selectbox text */
+    [data-testid="stSelectbox"] input {
+        background-color: transparent !important;
         color: #FFFFFF !important;
+        -webkit-text-fill-color: #FFFFFF !important;
+        caret-color: #FFFFFF !important;
     }
 
-    div[data-baseweb="select"] div {
+    /* Selectbox placeholder */
+    [data-testid="stSelectbox"] input::placeholder {
         color: #FFFFFF !important;
+        opacity: 1 !important;
     }
 
-    div[data-baseweb="select"] svg {
+    /* Selectbox arrow button */
+    [data-testid="stSelectbox"] button {
+        background-color: transparent !important;
+        color: #FFFFFF !important;
+        border: none !important;
+    }
+
+    [data-testid="stSelectbox"] button svg {
+        color: #FFFFFF !important;
         fill: #FFFFFF !important;
-        color: #FFFFFF !important;
     }
 
-    /* Open dropdown menus */
-    div[data-baseweb="popover"] {
+    /* Open selectbox dropdown */
+    [data-testid="stSelectboxVirtualDropdown"] {
+        background-color: #002060 !important;
+        border-color: #002060 !important;
+    }
+
+    [data-testid="stSelectboxVirtualDropdown"] [role="listbox"] {
         background-color: #002060 !important;
     }
 
-    div[data-baseweb="menu"] {
-        background-color: #002060 !important;
-    }
-
-    div[data-baseweb="menu"] ul {
-        background-color: #002060 !important;
-    }
-
-    div[data-baseweb="menu"] li {
+    /* Dropdown options */
+    [data-testid="stSelectboxVirtualDropdown"] [role="option"] {
         background-color: #002060 !important;
         color: #FFFFFF !important;
     }
 
-    div[data-baseweb="menu"] li span {
+    [data-testid="stSelectboxVirtualDropdown"]
+    [role="option"] [data-item-hl] {
         color: #FFFFFF !important;
     }
 
-    div[data-baseweb="menu"] li:hover {
+    /* Hovered, focused, and selected dropdown options */
+    [data-testid="stSelectboxVirtualDropdown"]
+    [role="option"][data-hovered] [data-item-hl],
+    [data-testid="stSelectboxVirtualDropdown"]
+    [role="option"][data-focused] [data-item-hl],
+    [data-testid="stSelectboxVirtualDropdown"]
+    [role="option"][data-selected] [data-item-hl] {
         background-color: #163A78 !important;
-        color: #FFFFFF !important;
-    }
-
-    div[data-baseweb="menu"] li:hover span {
         color: #FFFFFF !important;
     }
 
