@@ -1,13 +1,3 @@
-Absolutely. Here is the full updated code with:
-
-Age starting at **50**
-No age warning caption
-A more user friendly explanation of alcohol units
-The model prediction plus the estimated probability
-The H Tech navy and white styling
-Navy dropdown controls with white text
-
-```python
 # The 5-Week Machine Learning Engineer Challenge - Week 5 - Classification Deployment
 
 # Importing the libraries
@@ -533,4 +523,3 @@ st.caption(
     "The probability displayed is the output of the Machine Learning model "
     "and should not be interpreted as a clinical probability or diagnosis."
 )
-```
