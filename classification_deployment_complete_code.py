@@ -67,31 +67,59 @@ st.markdown(
         color: #4D5F7A !important;
     }
 
-    /* Select boxes */
+    /* Closed dropdown controls */
     div[data-baseweb="select"] > div {
-        background-color: #FFFFFF !important;
-        color: #002060 !important;
-        border-color: #B8C5D9 !important;
+        background-color: #002060 !important;
+        color: #FFFFFF !important;
+        border-color: #002060 !important;
+        border-radius: 8px !important;
     }
 
     div[data-baseweb="select"] span {
-        color: #002060 !important;
+        color: #FFFFFF !important;
     }
 
-    /* Dropdown menus */
+    div[data-baseweb="select"] div {
+        color: #FFFFFF !important;
+    }
+
+    div[data-baseweb="select"] svg {
+        fill: #FFFFFF !important;
+        color: #FFFFFF !important;
+    }
+
+    /* Open dropdown menus */
     div[data-baseweb="popover"] {
-        background-color: #FFFFFF !important;
+        background-color: #002060 !important;
     }
 
     div[data-baseweb="menu"] {
-        background-color: #FFFFFF !important;
+        background-color: #002060 !important;
+    }
+
+    div[data-baseweb="menu"] ul {
+        background-color: #002060 !important;
     }
 
     div[data-baseweb="menu"] li {
-        color: #002060 !important;
+        background-color: #002060 !important;
+        color: #FFFFFF !important;
     }
 
-    /* Slider value text */
+    div[data-baseweb="menu"] li span {
+        color: #FFFFFF !important;
+    }
+
+    div[data-baseweb="menu"] li:hover {
+        background-color: #163A78 !important;
+        color: #FFFFFF !important;
+    }
+
+    div[data-baseweb="menu"] li:hover span {
+        color: #FFFFFF !important;
+    }
+
+    /* Slider text */
     [data-testid="stSlider"] {
         color: #002060 !important;
     }
@@ -100,8 +128,8 @@ st.markdown(
         color: #002060 !important;
     }
 
-    /* Slider track */
-    [data-baseweb="slider"] > div > div {
+    /* Slider elements */
+    [data-baseweb="slider"] {
         color: #002060 !important;
     }
 
@@ -133,13 +161,18 @@ st.markdown(
     }
 
     div.stButton > button:hover {
-        background-color: #001746 !important;
+        background-color: #163A78 !important;
         color: #FFFFFF !important;
         border: none !important;
     }
 
     div.stButton > button:hover p {
         color: #FFFFFF !important;
+    }
+
+    /* Prediction messages */
+    [data-testid="stAlert"] p {
+        color: #002060 !important;
     }
 
     /* Top Streamlit header */
@@ -152,7 +185,7 @@ st.markdown(
         color: #002060 !important;
     }
 
-    /* Main menu icon */
+    /* Main menu */
     [data-testid="stMainMenu"] {
         color: #002060 !important;
     }
