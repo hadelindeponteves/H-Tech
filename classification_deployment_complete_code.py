@@ -12,7 +12,7 @@ st.set_page_config(
 )
 
 # Defining a conservative classification threshold
-CLASSIFICATION_THRESHOLD = 0.65
+CLASSIFICATION_THRESHOLD = 0.6
 
 # Applying the H-Tech visual identity
 st.markdown(
