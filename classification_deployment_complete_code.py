@@ -11,6 +11,9 @@ st.set_page_config(
     layout="wide"
 )
 
+# Defining a conservative classification threshold
+CLASSIFICATION_THRESHOLD = 0.70
+
 # Applying the H-Tech visual identity
 st.markdown(
     """
@@ -188,22 +191,6 @@ st.markdown(
         color: #002060 !important;
     }
 
-    /* Probability metric */
-    [data-testid="stMetric"] {
-        background-color: #F5F8FC !important;
-        border: 1px solid #D5DFEC !important;
-        border-radius: 12px !important;
-        padding: 1rem !important;
-    }
-
-    [data-testid="stMetricLabel"] {
-        color: #002060 !important;
-    }
-
-    [data-testid="stMetricValue"] {
-        color: #002060 !important;
-    }
-
     /* Top Streamlit header */
     [data-testid="stHeader"] {
         background-color: #FFFFFF !important;
@@ -235,7 +222,7 @@ st.title("🧠 Alzheimer's Disease Predictor")
 
 # Adding the authoring
 st.markdown(
-    "### An AI-powered application by **H-Tech Education**"
+    "### An AI-powered Machine Learning application by **H-Tech Education**"
 )
 
 # Adding a short description of the app
@@ -259,7 +246,7 @@ with st.container(border=True):
     with col1:
         age = st.slider(
             "Age",
-            min_value=60,
+            min_value=50,
             max_value=90,
             value=75
         )
@@ -499,8 +486,8 @@ predict_button = st.button(
 
 # Making and displaying the prediction
 if predict_button:
-    prediction = model.predict(input_data)[0]
     probability = model.predict_proba(input_data)[0][1]
+    prediction = int(probability >= CLASSIFICATION_THRESHOLD)
 
     if prediction == 1:
         st.warning(
@@ -511,15 +498,8 @@ if predict_button:
             "The model predicts that you are unlikely to have Alzheimer's Disease."
         )
 
-    st.metric(
-        "Model-estimated probability of Alzheimer's Disease",
-        f"{probability * 100:.2f}%"
-    )
-
 # Adding the medical disclaimer
 st.caption(
     "This application is an educational Machine Learning demonstration "
-    "and is not intended to provide medical diagnosis or medical advice. "
-    "The probability displayed is the output of the Machine Learning model "
-    "and should not be interpreted as a clinical probability or diagnosis."
+    "and is not intended to provide medical diagnosis or medical advice."
 )
