@@ -188,6 +188,22 @@ st.markdown(
         color: #002060 !important;
     }
 
+    /* Metric */
+    [data-testid="stMetric"] {
+        background-color: #F5F8FC !important;
+        border: 1px solid #D5DFEC !important;
+        border-radius: 12px !important;
+        padding: 1rem !important;
+    }
+
+    [data-testid="stMetricLabel"] {
+        color: #002060 !important;
+    }
+
+    [data-testid="stMetricValue"] {
+        color: #002060 !important;
+    }
+
     /* Top Streamlit header */
     [data-testid="stHeader"] {
         background-color: #FFFFFF !important;
@@ -243,7 +259,7 @@ with st.container(border=True):
     with col1:
         age = st.slider(
             "Age",
-            min_value=60,
+            min_value=50,
             max_value=90,
             value=75
         )
@@ -328,11 +344,16 @@ with st.container(border=True):
 
     with col2:
         alcohol_consumption = st.slider(
-            "Weekly Alcohol Consumption (units)",
+            "Weekly Alcohol Consumption (alcohol units per week)",
             min_value=0.0,
             max_value=20.0,
             value=5.0,
             step=0.1
+        )
+
+        st.caption(
+            "Enter the approximate total number of alcohol units you consume "
+            "during a typical week."
         )
 
         diet_quality = st.slider(
@@ -477,6 +498,7 @@ predict_button = st.button(
 # Making and displaying the prediction
 if predict_button:
     prediction = model.predict(input_data)[0]
+    probability = model.predict_proba(input_data)[0][1]
 
     if prediction == 1:
         st.warning(
@@ -487,8 +509,15 @@ if predict_button:
             "The model predicts that you are unlikely to have Alzheimer's Disease."
         )
 
+    st.metric(
+        "Model-estimated probability of Alzheimer's Disease",
+        f"{probability * 100:.2f}%"
+    )
+
 # Adding the medical disclaimer
 st.caption(
     "This application is an educational Machine Learning demonstration "
-    "and is not intended to provide medical diagnosis or medical advice."
+    "and is not intended to provide medical diagnosis or medical advice. "
+    "The probability displayed is the output of the Machine Learning model "
+    "and should not be interpreted as a clinical probability or diagnosis."
 )
